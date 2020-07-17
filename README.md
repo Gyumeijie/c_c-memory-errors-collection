@@ -30,3 +30,36 @@ int main()
 300
 
 ```
+
+#### 未初始话内存访问
+
+```cpp
+char *pStr = (char*) malloc(512);
+char c = pStr[0]; // the contents of pStr were not initialized
+void func()
+{ 
+    int a; 
+    int b = a * 4; // uninitialized read of variable a 
+}
+```
+
+
+#### 内存泄露
+
+> 特别是异常分支，容易忘记释放
+
+```cpp
+char *pStr = (char*) malloc(512);
+return;
+```
+
+
+#### 不匹配内存分配释放函数
+
+```cpp
+char *s = (char*) malloc(5); 
+delete s;
+```
+
+
+
