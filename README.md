@@ -62,5 +62,21 @@ char *s = (char*) malloc(5);
 delete s;
 ```
 
+#### 指针使用前要判空
 
+```cpp
+void foo(char* p)
+{
+   if (p == nullptr) {
+       return;
+   }
+}
+```
 
+#### 指针释放后应该置空，防止再次使用
+
+```cpp
+   delete p;
+   p = nullptr
+   // ...
+```
