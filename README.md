@@ -80,3 +80,5 @@ void foo(char* p)
    p = nullptr
    // ...
 ```
+
+https://github.com/google/sanitizers/wiki/AddressSanitizer
